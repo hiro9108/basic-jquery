@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <div id="header">
+      <div id="logo">CodeBin</div>
+      <div id="buttonContainer">
+        <div class="toggleButton active" id="html">HTML</div>
+        <div class="toggleButton" id="css">CSS</div>
+        <div class="toggleButton" id="javascript">JavaScript</div>
+        <div class="toggleButton active" id="output">Output</div>
+      </div>
+    </div>
+
+    <div id="bodyContainer">
+      <textarea id="htmlPanel" class="panel"><p>Hello Hell!</p></textarea>
+      <textarea id="cssPanel" class="panel hidden">p { color: green; }</textarea>
+      <textarea id="javascriptPanel" class="panel hidden">alert('HEY!');</textarea>
+      <iframe id="outputPanel" class="panel"></iframe>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

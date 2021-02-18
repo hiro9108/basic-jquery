@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <style>
+        #hiddenText{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <p id="fade-text">This is some boring text</p>
+    <button id="fade-out-text-button">Fade out Text</button>
+    <br><br>
+    <p id="hiddenText">This text was hidden initially</p>
+    <button id="fade-in-text-button">Fade in Text</button>
+    <br><br>
+    <p id="text">This is some text</p>
+    <button id="toggle">Toggle text</button>
+
+    <script>
+        $('#fade-out-text-button').click(function(){
+            $('#fade-text').fadeOut()
+        })
+        $('#fade-in-text-button').click(function(){
+            $('#hiddenText').fadeIn()
+        })
+
+        let textShowing = true
+
+        $('#toggle').click(function(){
+            if(textShowing){
+                $('#text').fadeOut(function(){
+                    textShowing = false
+                })
+            }else{
+                $('#text').fadeIn(function(){
+                    textShowing = true
+                })
+            }
+        })
+    </script>
+    
+</body>
+</html>

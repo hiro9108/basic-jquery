@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-ui/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.min.css" />
+    <link rel="stylesheet" href="app.css">
+  </head>
+  <body>
+    <div id="draggable">Drag me!!</div>
+    <div id="draggable-x">Drag me!!</div>
+
+    <div id="parentBox">
+      <span>I'm stuck in the box!</span>
+    </div>
+
+    <div id="resizable"></div>
+    <div id="also"></div>
+
+    <div id="draggable-small"></div>
+    <div id="droppable"></div>
+
+    <script type="text/javascript">
+      $('#draggable').draggable()
+      $('#draggable-x').draggable({ axis: 'x' })
+
+      $('span').draggable({
+        containment: 'parent',
+        drag: function () {
+          $(this).css('cursor', 'grabbing')
+        },
+        stop: function () {
+          $(this).css('cursor', 'grab')
+        },
+      })
+
+      $('#resizable').resizable({
+          grid: 50,
+          alsoResize: '#also',
+          resize: function(event, ui){
+              if($(this).width() > 300){
+                  alert('Big enough!')
+              }
+          }
+      })
+
+      $('#draggable-small').draggable()
+      $('#droppable').droppable({
+          drop: function(event, ui){
+              $(this).css('background-color', 'teal')
+          }
+      })
+    </script>
+  </body>
+</html>

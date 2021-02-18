@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <style>
+        .circle1{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: green;
+            margin: 10px
+        }
+        .circle2{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: red;
+            margin: 10px
+        }
+    </style>
+</head>
+<body>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+
+    <p>This is <b>some</b> text</p>
+
+    <iframe src="http://hackernoon.com" frameborder="0"></iframe>
+
+    <script>
+        $('.circle1').click(function(){
+            $('p').html('The text has changed')
+        })
+
+        $('.circle2').hover(function(){
+            $('iframe').attr('src', 'https://jquery.com')
+        })
+    </script>
+</body>
+</html>
